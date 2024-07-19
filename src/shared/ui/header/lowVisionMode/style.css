@@ -1,0 +1,13 @@
+.eye-button {
+  cursor: pointer;
+}
+
+.eye-icon {
+  width: 37px;
+  height: 38px;
+  color: #393939;
+}
+
+.eye-button:hover .eye-icon {
+  color: #36BE26;
+}
