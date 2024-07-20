@@ -3,10 +3,10 @@ import search from "shared/icons/header/search.png";
 
 const Seaarch = () => {
   return (
-    <div className="h-[37.76px] flex flex-row">
-      <input type="text" className="w-[157px] pl-4 py-1 bg-[#F2F2F2]" />
+    <div className="h-[37.76px] w-[157px] flex flex-row">
+      <input type="text" className=" w-[121px] pl-4 py-1 bg-[#F2F2F2]" />
       <div
-        className="bg-[#36BE26] p-[7.95px] w-[36.77px] cursor-pointer"
+        className="bg-[#36BE26] p-[5px] w-[36.77px] cursor-pointer"
         onClick={() => alert(`Ищу`)}
       >
         <img src={search} alt="search" />
