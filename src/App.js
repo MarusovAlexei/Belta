@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="App">
       <MainLayout header={<HeaderWidget />}>
-        <InfoSection />
-        <DocumentSection />
+        {/*   <InfoSection />
+        <DocumentSection /> */}
         <Products />
       </MainLayout>
     </div>

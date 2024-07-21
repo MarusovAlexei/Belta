@@ -8,7 +8,7 @@ interface ProductCardProps {
 
 const ProductCard: FC<ProductCardProps> = ({ img, title, overlay }) => {
   return (
-    <div className="w-[300px] h-[490px] relative flex items-center justify-center p-2">
+    <div className="lg:w-[300px] lg:h-[490px] sm:w-[247.66px] sm:h-[247.66px] w-[364px] h-[248px] relative flex items-center justify-center p-2">
       <img
         src={img}
         alt="img"
@@ -18,7 +18,7 @@ const ProductCard: FC<ProductCardProps> = ({ img, title, overlay }) => {
         style={{ backgroundColor: overlay }}
         className="absolute w-full h-full z-10 opacity-41"
       ></div>
-      <div className="absolute bottom-[50px] z-20 text-center text-[19.49px] font-bold text-white">
+      <div className="absolute lg:bottom-[50px]  sm:bottom-[30px] bottom-[25px] z-20 text-start sm:text-center text-[19.49px] font-bold text-white pl-7 sm:pl-0 w-full">
         {title}
       </div>
     </div>

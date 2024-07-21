@@ -9,7 +9,7 @@ import "./style.css";
 const HeaderWidget: React.FC = () => {
   return (
     <header className="w-full custom-border z-10">
-      <div className="max-w-[1502px] w-full mx-auto pb-12 pt-[45px]">
+     {/*  <div className="max-w-[1502px] w-full mx-auto pb-12 pt-[45px]">
         <div className="pb-1 flex justify-between items-center">
           <img src={logo} alt="Logo" className="min-w-[68px] min-h-[64px]" />
           <div className="flex flex-col gap-4 pt-[3px]">
@@ -26,7 +26,7 @@ const HeaderWidget: React.FC = () => {
         <div className="text-[41.07px] pt-[2px] font-semibold text-[#36BE26]">
           НАЗВАНИЕ ОРГАНИЗАЦИИ
         </div>
-      </div>
+      </div> */}
     </header>
   );
 };
