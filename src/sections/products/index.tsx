@@ -38,7 +38,7 @@ const Products = () => {
       }
     };
 
-    handleResize(); // Set initial number of displayed products
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
