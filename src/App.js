@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <MainLayout header={<HeaderWidget />}>
-        {/*  <InfoSection /> */}
+        <InfoSection />
         <DocumentSection />
         <Products />
       </MainLayout>

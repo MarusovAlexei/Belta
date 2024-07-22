@@ -24,17 +24,22 @@ const overlayColors = ["rgba(82, 204, 46, 0.41)", "rgba(246, 232, 177, 0.41)"];
 const Products = () => {
   const [showAll, setShowAll] = useState(false);
   const [numDisplayedProducts, setNumDisplayedProducts] = useState(6);
+  const [widthTitleContainer, setWidthTitleContainer] = useState("");
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1540) {
         setNumDisplayedProducts(5);
+        setWidthTitleContainer("1502px");
       } else if (window.innerWidth >= 1024) {
         setNumDisplayedProducts(8);
+        setWidthTitleContainer("900px");
       } else if (window.innerWidth >= 800) {
         setNumDisplayedProducts(6);
+        setWidthTitleContainer("743px");
       } else {
         setNumDisplayedProducts(2);
+        setWidthTitleContainer("363px");
       }
     };
 
@@ -56,13 +61,16 @@ const Products = () => {
 
   return (
     <div className="max-w-[1526px] w-full mx-auto p-3">
-      <div className="text-[21.01px] text-[#36BE26] font-semibold mb-[35px]">
+      <div
+        className="text-[21.01px] text-[#36BE26] font-semibold mb-[35px] mx-auto"
+        style={{ width: widthTitleContainer }}
+      >
         ПРОДУКЦИЯ
       </div>
       <div className="flex flex-wrap justify-center">
         {displayedProducts.map((product, index) => (
           <ProductCard
-            key={index}
+            key={`${product.title}-${index}`}
             img={product.img}
             overlay={overlayColors[index % overlayColors.length]}
             title={product.title}
@@ -72,8 +80,9 @@ const Products = () => {
       <div className="flex justify-center mt-4">
         <button
           onClick={handleToggle}
-          className="w-[295px] h-[52px] text-white text-[18.14px] font-semibold"
-          style={{ backgroundColor: showAll ? "#667760" : "#509D31" }}
+          className={`w-[295px] h-[52px] text-white text-[18.14px] font-semibold ${
+            showAll ? "bg-[#667760]" : "bg-[#509D31]"
+          }`}
         >
           {showAll ? "СВЕРНУТЬ" : "ПОСМОТРЕТЬ ВСЕ"}
         </button>
