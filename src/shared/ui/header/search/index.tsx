@@ -1,7 +1,7 @@
 import React from "react";
 import search from "shared/icons/header/search.png";
 
-const Seaarch = () => {
+const Search = () => {
   return (
     <div className="h-[37.76px] w-[157px] flex flex-row">
       <input type="text" className=" w-[121px] pl-4 py-1 bg-[#F2F2F2]" />
@@ -15,4 +15,4 @@ const Seaarch = () => {
   );
 };
 
-export { Seaarch };
+export { Search };
