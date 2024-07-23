@@ -78,7 +78,7 @@ const Products = () => {
           />
         ))}
       </div>
-      <div className="flex justify-center mt-4">
+      <div className="flex justify-center mt-7">
         <button
           onClick={handleToggle}
           className={`w-[364px] md:w-[295px] h-[52px] text-white text-[18.14px] font-semibold ${

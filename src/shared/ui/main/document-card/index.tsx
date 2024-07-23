@@ -9,8 +9,8 @@ interface DocumentCard {
 const DocumentCard: FC<DocumentCard> = ({ title, subTitle, img }) => {
   return (
     <div className="w-[358px] h-[267px] bg-[#F1F1EE] relative p-[12px] my-10 mx-auto">
-      <div className="w-full h-full border-[2px] borber-[#B5C9A7] flex flex-col items-center justify-center">
-        <div className="pt-62px text-[21px] font-semibold text-center">
+      <div className="w-full h-full border-[2px] borber-[#B5C9A7] flex flex-col items-center justify-start">
+        <div className="pt-[50px] text-[21px] font-semibold text-center">
           {title}
         </div>
         {subTitle && (

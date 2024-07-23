@@ -37,7 +37,7 @@ const DocumentSection = () => {
   ];
 
   return (
-    <div className="py-[40px] mx-auto w-[358px] md:w-[746px] 2xl:w-[100%] max-w-[1502px]">
+    <div className="pt-[40px] pb-[10px] mx-auto w-[358px] md:w-[746px] 2xl:w-[100%] max-w-[1502px]">
       <Swiper
         spaceBetween={23}
         pagination={{ clickable: true }}
