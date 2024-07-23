@@ -5,8 +5,6 @@ $transition-timing: ease;
 $media-max-width: 1550px;
 
 .custom-border {
-  border-bottom: 1px solid $border-color;
-
   @media (max-width: $media-max-width) {
     border-bottom: none;
   }

@@ -1,31 +1,60 @@
 $white: #ffffff;
-$clip-path-offset: 100px;
-$clip-path-extra: 200px;
+
+$media-max-width: 1550px;
 
 .custom-border {
   position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $white;
+    z-index: -1;
+  }
 }
 
-.custom-border::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: $white;
-  clip-path: polygon(
-    0% 0%,
-    // Слева вверху
-    100% 0%,
-    // Справа вверху
-    100% calc(100% - $clip-path-offset),
-    // Справа почти до низа
-    calc(50% + $clip-path-extra) calc(100% - $clip-path-offset),
-    // Чуть выше середины снизу под углом 45 градусов
-    50% 100%,
-    // Середина снизу
-    0% 100% // Слева внизу
-  );
-  z-index: -1;
+@media (min-width: $media-max-width) {
+  $clip-path-offset: 130px;
+  $clip-path-extra: 350px;
+
+  .custom-border::after {
+    clip-path: polygon(
+      0% 0%,
+      // Слева вверху
+      100% 0%,
+      // Справа вверху
+      100% calc(100% - $clip-path-offset),
+      // Справа почти до низа
+      calc(50% + $clip-path-extra) calc(100% - $clip-path-offset),
+      // Чуть выше середины снизу под углом 45 градусов
+      45% 100%,
+      // Середина снизу
+      0% 100% // Слева внизу
+    );
+  }
+}
+
+@media (max-width: $media-max-width) {
+  $clip-path-offset: 100px;
+  $clip-path-extra: 350px;
+
+  .custom-border::after {
+    clip-path: polygon(
+      0% 0%,
+      // Слева вверху
+      100% 0%,
+      // Справа вверху
+      100% calc(100% - $clip-path-offset),
+      // Справа почти до низа
+      calc(60% + $clip-path-extra) calc(100% - $clip-path-offset),
+      // Чуть выше середины снизу под углом 45 градусов
+      65% 100%,
+      // Середина снизу
+      0% 100% // Слева внизу
+    );
+  }
 }

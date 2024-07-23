@@ -22,36 +22,33 @@ const products = [
 
 const overlayColors = ["rgba(82, 204, 46, 0.41)", "rgba(246, 232, 177, 0.41)"];
 
-const Products: React.FC = () => {
+const Products = () => {
   const [showAll, setShowAll] = useState(false);
   const [numDisplayedProducts, setNumDisplayedProducts] = useState(6);
-  const [widthTitleContainer, setWidthTitleContainer] = useState("743px");
+  const [widthTitleContainer, setWidthTitleContainer] = useState("");
 
   useEffect(() => {
-    const updateLayout = (e: MediaQueryListEvent | MediaQueryList) => {
-      if (e.matches) {
-        if (window.innerWidth >= 1540) {
-          setNumDisplayedProducts(5);
-          setWidthTitleContainer("1502px");
-        } else if (window.innerWidth >= 1024) {
-          setNumDisplayedProducts(8);
-          setWidthTitleContainer("900px");
-        } else if (window.innerWidth >= 800) {
-          setNumDisplayedProducts(6);
-          setWidthTitleContainer("743px");
-        } else {
-          setNumDisplayedProducts(2);
-          setWidthTitleContainer("363px");
-        }
+    const handleResize = () => {
+      if (window.innerWidth >= 1540) {
+        setNumDisplayedProducts(5);
+        setWidthTitleContainer("1502px");
+      } else if (window.innerWidth >= 1024) {
+        setNumDisplayedProducts(8);
+        setWidthTitleContainer("900px");
+      } else if (window.innerWidth >= 800) {
+        setNumDisplayedProducts(6);
+        setWidthTitleContainer("743px");
+      } else {
+        setNumDisplayedProducts(2);
+        setWidthTitleContainer("363px");
       }
     };
 
-    const mediaQueryList = window.matchMedia("(min-width: 800px)");
-    mediaQueryList.addEventListener("change", updateLayout);
-    updateLayout(mediaQueryList);
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      mediaQueryList.removeEventListener("change", updateLayout);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -74,7 +71,7 @@ const Products: React.FC = () => {
       <div className="flex flex-wrap justify-center">
         {displayedProducts.map((product, index) => (
           <ProductCard
-            key={product.title + index}
+            key={`${product.title}-${index}`}
             img={product.img}
             overlay={overlayColors[index % overlayColors.length]}
             title={product.title}
@@ -84,7 +81,7 @@ const Products: React.FC = () => {
       <div className="flex justify-center mt-4">
         <button
           onClick={handleToggle}
-          className={`w-[295px] h-[52px] text-white text-[18.14px] font-semibold ${
+          className={`w-[364px] md:w-[295px] h-[52px] text-white text-[18.14px] font-semibold ${
             showAll ? "bg-[#667760]" : "bg-[#509D31]"
           }`}
         >
