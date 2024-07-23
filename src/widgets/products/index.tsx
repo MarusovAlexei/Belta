@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// shared
 import { ProductCard } from "shared/ui/main/product-card";
 import first from "shared/icons/products/1.png";
 import second from "shared/icons/products/2.png";
@@ -78,10 +77,10 @@ const Products = () => {
           />
         ))}
       </div>
-      <div className="flex justify-center mt-7">
+      <div className="flex justify-center mt-4">
         <button
           onClick={handleToggle}
-          className={`w-[364px] md:w-[295px] h-[52px] text-white text-[18.14px] font-semibold ${
+          className={`w-[295px] h-[52px] text-white text-[18.14px] font-semibold ${
             showAll ? "bg-[#667760]" : "bg-[#509D31]"
           }`}
         >
