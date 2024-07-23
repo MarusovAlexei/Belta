@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// shared
 import fon1 from "shared/icons/info/fon1.png";
 import fon2 from "shared/icons/info/fon2.png";
 import fon3 from "shared/icons/info/fon3.png";

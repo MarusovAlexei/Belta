@@ -1,7 +1,7 @@
 import React from "react";
-import { InfoSection } from "sections/info";
-import { DocumentSection } from "sections/documents";
-import { Products } from "sections/products";
+import { InfoSection } from "widgets/info";
+import { DocumentSection } from "widgets/documents";
+import { Products } from "widgets/products";
 
 const Lending = () => {
   return (

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import "./style.scss";
+// shared
 import { Menu } from "shared/ui/header/menu";
 import { Search } from "shared/ui/header/search";
 import { LowVisionMode } from "shared/ui/header/lowVisionMode";
 import { ChangeLanguage } from "shared/ui/header/changeLanguage";
 import logo from "shared/icons/header/logo.png";
-import "./style.css";
+
 
 const HeaderWidget: React.FC = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1536);

@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { MainLayout } from "layouts";
 import { HeaderWidget } from "widgets/header";
 import { Lending } from "pages/lending";

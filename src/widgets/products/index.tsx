@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// shared
 import { ProductCard } from "shared/ui/main/product-card";
 import first from "shared/icons/products/1.png";
 import second from "shared/icons/products/2.png";
@@ -21,33 +22,36 @@ const products = [
 
 const overlayColors = ["rgba(82, 204, 46, 0.41)", "rgba(246, 232, 177, 0.41)"];
 
-const Products = () => {
+const Products: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
   const [numDisplayedProducts, setNumDisplayedProducts] = useState(6);
-  const [widthTitleContainer, setWidthTitleContainer] = useState("");
+  const [widthTitleContainer, setWidthTitleContainer] = useState("743px");
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1540) {
-        setNumDisplayedProducts(5);
-        setWidthTitleContainer("1502px");
-      } else if (window.innerWidth >= 1024) {
-        setNumDisplayedProducts(8);
-        setWidthTitleContainer("900px");
-      } else if (window.innerWidth >= 800) {
-        setNumDisplayedProducts(6);
-        setWidthTitleContainer("743px");
-      } else {
-        setNumDisplayedProducts(2);
-        setWidthTitleContainer("363px");
+    const updateLayout = (e: MediaQueryListEvent | MediaQueryList) => {
+      if (e.matches) {
+        if (window.innerWidth >= 1540) {
+          setNumDisplayedProducts(5);
+          setWidthTitleContainer("1502px");
+        } else if (window.innerWidth >= 1024) {
+          setNumDisplayedProducts(8);
+          setWidthTitleContainer("900px");
+        } else if (window.innerWidth >= 800) {
+          setNumDisplayedProducts(6);
+          setWidthTitleContainer("743px");
+        } else {
+          setNumDisplayedProducts(2);
+          setWidthTitleContainer("363px");
+        }
       }
     };
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
+    const mediaQueryList = window.matchMedia("(min-width: 800px)");
+    mediaQueryList.addEventListener("change", updateLayout);
+    updateLayout(mediaQueryList);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      mediaQueryList.removeEventListener("change", updateLayout);
     };
   }, []);
 
@@ -70,7 +74,7 @@ const Products = () => {
       <div className="flex flex-wrap justify-center">
         {displayedProducts.map((product, index) => (
           <ProductCard
-            key={`${product.title}-${index}`}
+            key={product.title + index}
             img={product.img}
             overlay={overlayColors[index % overlayColors.length]}
             title={product.title}

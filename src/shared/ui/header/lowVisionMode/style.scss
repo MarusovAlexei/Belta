@@ -1,0 +1,18 @@
+$eye-icon-width: 37px;
+$eye-icon-height: 38px;
+$eye-icon-color-default: #393939;
+$eye-icon-color-hover: #36be26;
+
+.eye-button {
+  cursor: pointer;
+
+  &:hover .eye-icon {
+    color: $eye-icon-color-hover;
+  }
+}
+
+.eye-icon {
+  width: $eye-icon-width;
+  height: $eye-icon-height;
+  color: $eye-icon-color-default;
+}

@@ -1,14 +1,16 @@
 import React from "react";
+import "./style.scss";
+// swiper
+import "swiper/swiper-bundle.css";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+// shared
 import { DocumentCard } from "shared/ui/main/document-card";
 import road from "shared/icons/document/road.png";
 import mainRoad from "shared/icons/document/mainRoad.png";
 import phone from "shared/icons/document/phone.png";
 import tag from "shared/icons/document/tag.png";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
-import "swiper/swiper-bundle.css";
-import "swiper/css/pagination";
-import "./style.css";
 
 const DocumentSection = () => {
   const items = [
