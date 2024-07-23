@@ -1,10 +1,10 @@
 import React from "react";
 import "./style.scss";
 // swiper
-import "swiper/swiper-bundle.css";
-import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
+import "swiper/swiper-bundle.css";
+import "swiper/css/pagination";
 // shared
 import { DocumentCard } from "shared/ui/main/document-card";
 import road from "shared/icons/document/road.png";
@@ -37,7 +37,7 @@ const DocumentSection = () => {
   ];
 
   return (
-    <div className="pt-[40px] pb-[10px] mx-auto w-[358px] md:w-[746px] 2xl:w-[100%] max-w-[1502px]">
+    <div className="py-[40px] mx-auto w-[358px] md:w-[746px] 2xl:w-[100%] max-w-[1502px]">
       <Swiper
         spaceBetween={23}
         pagination={{ clickable: true }}
