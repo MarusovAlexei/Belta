@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+## Технологие, которые использовались при выпол6нении тестового задания:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. HTML
+2. CSS (SCSS), Tailwind
+3. Js, Ts, React (архитектура приложения future slised)
+4. Слайдер – swiper (кастомные кнопки переключения слайдов)
 
-## Available Scripts
+## Описание проекта:
 
-In the project directory, you can run:
+1. **Header состоит из отдельных элементов:** логотип, двухуровневое меню, строка поискового запроса, логотип перехода на версию для слабовидящих, смена языковых версий сайта:
 
-### `npm start`
+- логотип является картинкой,
+- двухуровневое меню. При наведении на элементы первого уровня выпадает окно с элементами второго уровня. Наряду с этим, когда появляется burger menu элементы второго уровня выпадают после нажатия на элемент первого уровня
+- строка поискового запроса без логики поиска, добавил просто alert (нет из чего искать)
+- логотип перехода на версию для слабовидящих меняет цвет при наведении на него. Логики работы нет, так как нет требования в задании
+- смена языковых версий сайта. Перевод не реализовывал, так как нет требования в задании, добавил просто alert
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. **Info widget состоит из:** заголовка баннера, текста баннера, картинки заднего фона баннера кнопок переключения между баннерами. Наряду с этим баннеры меняются самостоятельно с периодичностью 5 секунд. При изменении разрешения экрана меньше 768px кнопки переключения баннеров пропадают и появляется меню сверху для переключения баннеров, которое можно закрыть. Смена баннеров кастомная, без использования библиотек.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. **Document widget состоит из:** блоков с информацией. При изменении разрешения экрана меньше 1536px появляется слайдер с кастомизированными кнопками переключения слайдов. Для реализации слайдера использован Swiper.
 
-### `npm test`
+4. **Products widget состоит из:** карточек продуктов (отображаются не все сразу), кнопки, которая позволяет открыть все карточки продуктов и свернуть их. При изменении разрешения экрана количество отображаемых карточек в свернутом виде тоже меняется.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Преимущества данной реализации:
 
-### `npm run build`
+1. **Архитектура future slised позволяет:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- гибко заменять компоненты архитектуры
+- каждый модуль можно независимо модифицировать / переписать без сайд-эффектов
+- DRY и локальной кастомизацией
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **React позволяет:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- использовать архитектуру основанную на компонентах
+- иметь более быстрый рендеринг компонентов
 
-### `npm run eject`
+3. **TS позволяет:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- исключить ошибки передачи пропсорв или компонентов
+- строгая типизация данных, благодаря которой удается обнаружить ошибки на стадии написания кода

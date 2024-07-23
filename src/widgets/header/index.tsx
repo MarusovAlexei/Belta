@@ -7,7 +7,6 @@ import { LowVisionMode } from "shared/ui/header/lowVisionMode";
 import { ChangeLanguage } from "shared/ui/header/changeLanguage";
 import logo from "shared/icons/header/logo.png";
 
-
 const HeaderWidget: React.FC = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1536);
 
